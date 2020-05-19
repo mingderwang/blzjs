@@ -16,14 +16,17 @@ const main = async () => { bz = await bluzelle({
      }); 
      try
      {
-//          res = await bz.create("xtest1", "awesome", gas_params);
- //         console.log(typeof res != 'undefined' ? res : "success");
+          res = await bz.create("xtest1", "awesome", gas_params);
+         console.log(typeof res != 'undefined' ? res : "success");
 
-await bz.create(process.argv[2]?process.argv[2]:"same_id", (process.argv[3]?process.argv[3]:"empty parm in command line"), gas_params);
+          res = await bz.read("xtest1", false);
+console.log(res)
+//await bz.create(process.argv[2]?process.argv[2]:"same_id", (process.argv[3]?process.argv[3]:"empty parm in command line"), gas_params);
 
-          res = await bz.read(process.argv[2]?process.argv[2]:"same_id", false);
-          console.log(typeof res != 'undefined' ? res : "success");
-console.log(process.argv[2]?process.argv[2]:"same_id")
+//          res = await bz.read(process.argv[2]?process.argv[2]:"same_id", false);
+//          res = await bz.read(process.argv[2]?process.argv[2]:"same_id", false);
+//          console.log(typeof res != 'undefined' ? res : "success");
+//console.log(process.argv[2]?process.argv[2]:"same_id")
 
 //const hasMyKey = await bz.has('mykey');
 //console.log(hasMyKey)
